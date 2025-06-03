@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+.footer p {
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,18 +39,26 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #000;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
 
         /* Header Styles */
         .header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
             padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
 
         .header-content {
@@ -41,7 +73,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #fbbf24;
+            color: #000;
         }
 
         .nav-menu {
@@ -51,53 +83,31 @@
         }
 
         .nav-menu a {
-            color: white;
+            color: #000;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .nav-menu a:hover {
-            color: #fbbf24;
+            color: #666;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(59, 130, 246, 0.7)), 
-                        url('./manteca-ca.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 6rem 2rem;
-            min-height: 70vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 6rem 2rem;
+            color: white;
+            position: relative;
         }
 
         /* Timeline Section */
         .timeline-section {
-            background: linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             padding: 4rem 0;
         }
 
@@ -114,13 +124,14 @@
 
         .timeline-header h2 {
             font-size: 2.5rem;
-            color: #1e3a8a;
+            color: #000;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
         }
 
         .timeline-header p {
             font-size: 1.2rem;
-            color: #64748b;
+            color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -130,17 +141,6 @@
             position: relative;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #fbbf24, #f59e0b);
-            transform: translateX(-50%);
         }
 
         .timeline-item {
@@ -158,78 +158,76 @@
 
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: 0;
-            margin-right: 55%;
-            text-align: right;
+            margin-right: 0;
+            text-align: center;
         }
 
         .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 55%;
+            margin-left: 0;
             margin-right: 0;
-            text-align: left;
+            text-align: center;
         }
 
         .timeline-year {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
-            background: #1e3a8a;
+            display: inline-block;
+            background: #000;
             color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.4rem;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
-            z-index: 10;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.6s ease;
+            transform: scale(0.8);
+            opacity: 0.7;
+        }
+
+        .timeline-year.animate {
+            transform: scale(1);
+            opacity: 1;
         }
 
         .timeline-content {
-            background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 4px solid #fbbf24;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .timeline-title {
             font-size: 1.5rem;
-            color: #1e3a8a;
+            color: #000;
             margin-bottom: 1rem;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
         }
 
         .timeline-description {
-            color: #64748b;
+            color: #000;
             line-height: 1.7;
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .timeline-image {
             width: 100%;
             height: 200px;
-            background: #e5e7eb;
+            background-size: cover;
+            background-position: center;
             border-radius: 10px;
             margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 0.9rem;
+            border: 2px solid #000;
         }
 
         /* Stats Section */
         .stats-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
             padding: 4rem 0;
         }
@@ -244,15 +242,12 @@
         .stat-card {
             text-align: center;
             padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
         }
 
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
-            color: #fbbf24;
+            color: white;
             margin-bottom: 0.5rem;
         }
 
@@ -263,8 +258,7 @@
 
         /* Footer */
         .footer {
-            background: #1f2937;
-            color: white;
+            color: #000;
             padding: 3rem 0;
             text-align: center;
         }
@@ -276,8 +270,9 @@
         }
 
         .footer h3 {
-            color: #fbbf24;
+            color: #000;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
         }
 
         .social-links {
@@ -288,24 +283,18 @@
         }
 
         .social-links a {
-            color: white;
+            color: #000;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #fbbf24;
+            color: #666;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero {
-                background-attachment: scroll;
-                min-height: 60vh;
-                padding: 4rem 1rem;
-            }
-
-            .timeline-section {
+            body {
                 background-attachment: scroll;
             }
 
@@ -327,17 +316,14 @@
 
             .timeline-item:nth-child(odd) .timeline-content,
             .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 80px;
+                margin-left: 0;
                 margin-right: 0;
-                text-align: left;
+                text-align: center;
             }
 
             .timeline-year {
-                left: 30px;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 60px;
-                font-size: 1rem;
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
             }
 
             .stats-grid {
@@ -383,139 +369,140 @@
 
     <!-- Timeline Section -->
     <section class="timeline-section" id="development">
-        <div class="container">
-            <div class="timeline-header fade-in">
-                <h2>Economic Development Timeline</h2>
-                <p>Major milestones in Manteca's growth and transformation over the past decade</p>
-            </div>
+            <div class="container">
+                <div class="timeline-header fade-in">
+                    <h2>Economic Development Timeline</h2>
+                    <p>Major milestones in Manteca's growth and transformation over the past decade</p>
+                </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2015</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Bass Pro Shops Opens</h3>
-                        <p class="timeline-description">The opening of Bass Pro Shops brought a major retail anchor to Manteca, creating hundreds of jobs and attracting visitors from across the Central Valley. This 150,000 square foot destination store features outdoor recreation equipment, educational programs, and family-friendly attractions.</p>
-                        <div class="timeline-image">Bass Pro Shops Exterior</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <h3 class="timeline-title">Green Energy Initiative</h3>
+                            <p class="timeline-description">Manteca launched a comprehensive green energy program including solar installations on municipal buildings and electric vehicle charging stations throughout the city. This $40M investment demonstrates the city's commitment to sustainability and environmental leadership.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca1.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2017</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Amazon Fulfillment Center</h3>
-                        <p class="timeline-description">Amazon invested $200M in a state-of-the-art fulfillment center, bringing over 1,500 full-time jobs to Manteca. This 1.2 million square foot facility serves as a major distribution hub for Northern California, positioning Manteca as a key logistics center.</p>
-                        <div class="timeline-image">Amazon Fulfillment Center</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3 class="timeline-title">Technology Hub Launch</h3>
+                            <p class="timeline-description">The Manteca Innovation Center opened as a technology incubator and co-working space, supporting local entrepreneurs and tech startups. This 50,000 square foot facility includes modern offices, meeting spaces, and high-speed internet infrastructure.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca2.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Transit Village Development</h3>
-                        <p class="timeline-description">The Manteca Transit Village project began, featuring mixed-use development around the ACE train station. This transit-oriented development includes 450 residential units, retail space, and office buildings, promoting sustainable transportation and smart growth.</p>
-                        <div class="timeline-image">Transit Village Rendering</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <h3 class="timeline-title">Downtown Revitalization</h3>
+                            <p class="timeline-description">The historic downtown area underwent a $25M revitalization project, featuring new restaurants, boutique shops, and cultural venues. The restored Manteca Historical Museum and new civic center became focal points for community gatherings and tourism.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca3.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2019</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Great Wolf Lodge Resort</h3>
-                        <p class="timeline-description">The $150M Great Wolf Lodge opened as the largest family resort in Northern California. This 525-room resort and water park attraction created 800 jobs and established Manteca as a premier family destination, attracting over 1 million visitors annually.</p>
-                        <div class="timeline-image">Great Wolf Lodge</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021</div>
+                            <h3 class="timeline-title">Industrial Growth Surge</h3>
+                            <p class="timeline-description">Over 2 million square feet of new industrial and warehouse space was completed, attracting major logistics companies including FedEx Ground and UPS. This development created over 1,000 new jobs and generated $300M in economic impact.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca4.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Medical Campus Expansion</h3>
-                        <p class="timeline-description">Kaiser Permanente and Doctors Medical Center expanded their Manteca facilities, adding specialized care services and creating 300 new healthcare jobs. These investments totaling $75M enhanced medical services for the growing population.</p>
-                        <div class="timeline-image">Medical Campus</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3 class="timeline-title">Medical Campus Expansion</h3>
+                            <p class="timeline-description">Kaiser Permanente and Doctors Medical Center expanded their Manteca facilities, adding specialized care services and creating 300 new healthcare jobs. These investments totaling $75M enhanced medical services for the growing population.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca5.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Industrial Growth Surge</h3>
-                        <p class="timeline-description">Over 2 million square feet of new industrial and warehouse space was completed, attracting major logistics companies including FedEx Ground and UPS. This development created over 1,000 new jobs and generated $300M in economic impact.</p>
-                        <div class="timeline-image">Industrial Complex</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2019</div>
+                            <h3 class="timeline-title">Great Wolf Lodge Resort</h3>
+                            <p class="timeline-description">The $150M Great Wolf Lodge opened as the largest family resort in Northern California. This 525-room resort and water park attraction created 800 jobs and established Manteca as a premier family destination, attracting over 1 million visitors annually.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca6.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Downtown Revitalization</h3>
-                        <p class="timeline-description">The historic downtown area underwent a $25M revitalization project, featuring new restaurants, boutique shops, and cultural venues. The restored Manteca Historical Museum and new civic center became focal points for community gatherings and tourism.</p>
-                        <div class="timeline-image">Downtown Manteca</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018</div>
+                            <h3 class="timeline-title">Transit Village Development</h3>
+                            <p class="timeline-description">The Manteca Transit Village project began, featuring mixed-use development around the ACE train station. This transit-oriented development includes 450 residential units, retail space, and office buildings, promoting sustainable transportation and smart growth.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca7.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Technology Hub Launch</h3>
-                        <p class="timeline-description">The Manteca Innovation Center opened as a technology incubator and co-working space, supporting local entrepreneurs and tech startups. This 50,000 square foot facility includes modern offices, meeting spaces, and high-speed internet infrastructure.</p>
-                        <div class="timeline-image">Innovation Center</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2017</div>
+                            <h3 class="timeline-title">Amazon Fulfillment Center</h3>
+                            <p class="timeline-description">Amazon invested $200M in a state-of-the-art fulfillment center, bringing over 1,500 full-time jobs to Manteca. This 1.2 million square foot facility serves as a major distribution hub for Northern California, positioning Manteca as a key logistics center.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca8.jpg')"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Green Energy Initiative</h3>
-                        <p class="timeline-description">Manteca launched a comprehensive green energy program including solar installations on municipal buildings and electric vehicle charging stations throughout the city. This $40M investment demonstrates the city's commitment to sustainability and environmental leadership.</p>
-                        <div class="timeline-image">Solar Installation</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015</div>
+                            <h3 class="timeline-title">Bass Pro Shops Opens</h3>
+                            <p class="timeline-description">The opening of Bass Pro Shops brought a major retail anchor to Manteca, creating hundreds of jobs and attracting visitors from across the Central Valley. This 150,000 square foot destination store features outdoor recreation equipment, educational programs, and family-friendly attractions.</p>
+                            <div class="timeline-image" style="background-image: url('./manteca9.jpg')"></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="timeline-header">
-                <h2>Manteca by the Numbers</h2>
-                <p>Key statistics showcasing our community's growth and success</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card fade-in">
-                    <div class="stat-number">$1.2B</div>
-                    <div class="stat-label">Total Economic Investment</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-label">New Jobs Created</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">85,000+</div>
-                    <div class="stat-label">Current Population</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">25%</div>
-                    <div class="stat-label">Population Growth</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <h3>Connect With Manteca</h3>
-            <p>Follow our continued growth and development</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="timeline-header">
+                    <h2>Manteca by the Numbers</h2>
+                    <p>Key statistics showcasing our community's growth and success</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">$1.2B</div>
+                        <div class="stat-label">Total Economic Investment</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">New Jobs Created</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">85,000+</div>
+                        <div class="stat-label">Current Population</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Population Growth</div>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2024 City of Manteca. All rights reserved.</p>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <div class="footer-content">
+                <h3>Connect With Manteca</h3>
+                <p>Follow our continued growth and development</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 City of Manteca. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 
     <script>
         // Intersection Observer for animations
@@ -535,9 +522,13 @@
             });
         }, observerOptions);
 
-        // Observe timeline items
+        // Observe timeline items and years
         document.querySelectorAll('.timeline-item').forEach(item => {
             observer.observe(item);
+        });
+
+        document.querySelectorAll('.timeline-year').forEach(year => {
+            observer.observe(year);
         });
 
         // Observe fade-in elements
@@ -557,15 +548,6 @@
                     });
                 }
             });
-        });
-
-        // Add parallax effect to hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
         });
     </script>
 </body>
